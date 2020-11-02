@@ -1,0 +1,23 @@
+@startuml content-sync
+actor Felix
+participant GitHub
+participant "Blog API" as api
+database DynamoDB
+
+Felix -> GitHub: Commit Blog post
+GitHub -> api: ""POST /api/webhooks""
+api -> GitHub: fetch post files content
+rnote over api: process files into JSON
+api -> DynamoDB: persist posts
+@enduml
+
+@startuml content-fetch
+participant felixjung.io
+participant "Blog API" as api
+database DynamoDB
+
+felixjung.io -> api: ""GET /api/posts""
+api -> DynamoDB: get posts from posts table
+DynamoDB --> api
+api --> felixjung.io:
+@enduml

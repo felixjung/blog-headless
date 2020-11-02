@@ -1,0 +1,15 @@
+{
+  // extend your base config so you don't have to redefine your compilerOptions
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.ispec.ts",
+    "./*.js"
+  ],
+  "exclude": [
+    "node_modules/jest-extended/types",
+    "node_modules",
+    "lint-staged.config.js",
+  ]
+}
