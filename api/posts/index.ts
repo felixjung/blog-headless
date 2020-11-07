@@ -70,7 +70,6 @@ async function listPosts({ res, req, logger }: Context) {
 
   const sortedPosts = posts.sort(publishDateCompareFn);
 
-  res.setHeader('Content-Type', 'application/json');
   res.status(200).json({
     data: sortedPosts,
   });
@@ -122,6 +121,9 @@ function isUndefined(value: unknown): value is undefined {
 
 export default withContext(
   handleErrors,
-  withHeaders({ 'Cache-Control': 's-maxage=60, stale-while-revalidate' }),
+  withHeaders({
+    'Cache-Control': 's-maxage=600, stale-while-revalidate',
+    'Content-Type': 'application/json',
+  }),
   listPosts,
 );

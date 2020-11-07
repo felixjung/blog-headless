@@ -15,19 +15,19 @@
     "noUnusedLocals": true,
     "pretty": true,
     "moduleResolution": "node",
-    "sourceMap": false,
+    "sourceMap": true,
     "outDir": "dist",
     "baseUrl": "src",
-    "declaration": false,
+    "declaration": true,
     "strict": true,
     "strictNullChecks": true,
     "typeRoots": [
-      "src/types",
+      "types",
       "node_modules/@types"
     ]
   },
   "include": [
-    "src/**/*.ts",
+    "**/*.ts",
   ],
   "exclude": [
     "node_modules/jest-extended/types",
