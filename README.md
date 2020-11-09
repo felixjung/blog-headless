@@ -26,8 +26,8 @@ efficiently via the API.
 
 ![Sequence diagram depicting the list posts operation on the API.](docs/content-fetch.svg)
 
-The project structure follows Vercel's of keeping serverless request handlers in
-`api` folder at the project root and defining routes and route params in the
+The project structure follows Vercel's recommendation of keeping serverless request handlers
+in an `api` folder at the project root and defining routes and route params in the
 file names.
 
 ```
